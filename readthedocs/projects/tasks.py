@@ -167,18 +167,9 @@ def update_documentation_type(version, api):
     Automatically determine the doc type for a user.
     """
 
-    checkout_path = version.project.checkout_path(version.slug)
-    os.chdir(checkout_path)
-    files = run('find .')[1].split('\n')
-    markdown = sphinx = 0
-    for filename in files:
-        if fnmatch.fnmatch(filename, '*.md') or fnmatch.fnmatch(filename, '*.markdown'):
-            markdown += 1
-        elif fnmatch.fnmatch(filename, '*.rst'):
-            sphinx += 1
+    # Keep this here for any 'auto' projects.
+
     ret = 'sphinx'
-    if markdown > sphinx:
-        ret = 'mkdocs'
     project_data = api.project(version.project.pk).get()
     project_data['documentation_type'] = ret
     api.project(version.project.pk).put(project_data)
