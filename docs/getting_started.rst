@@ -11,7 +11,7 @@ If you are already using Sphinx or Markdown for your docs, skip ahead to
 Write Your Docs
 ---------------
 
-You have two options for format for your documentation:
+You have two options for format for your documentation:s
 
 * :ref:`in-rst`
 * :ref:`in-markdown`
@@ -59,7 +59,7 @@ In Markdown
 ~~~~~~~~~~~
 
 You can use Markdown and reStructuredText in the same Sphinx project.
-We suppor this natively on Read the Docs, and you can do it locally::
+We support this natively on Read the Docs, and you can do it locally::
 
     $ pip install recommonmark
 
